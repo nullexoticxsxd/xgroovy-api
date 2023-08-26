@@ -24,9 +24,5 @@ jobs:
       - name: Build and package application
         run: npm run build  # Replace with your build script if needed
 
-      - name: Log in to Railway.app
-        run: |
-          echo ${{ secrets.RAILWAY_TOKEN }} | railway login
-
       - name: Deploy to Railway.app
-        run: railway up
+        run: node index.js
